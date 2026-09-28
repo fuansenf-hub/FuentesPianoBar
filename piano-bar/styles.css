@@ -1,0 +1,909 @@
+/* ==========================================================================
+   PIANO BAR - HOJA DE ESTILOS PRINCIPAL
+   Estética: Tablero de corcho, notas analógicas, colores vintage y calidez nocturna
+   Paleta: #A78A7F, tonos crema/arena, marrones tierra y grafito cálido
+   Tipografías: Inria Serif (títulos) y Crimson Text (cuerpos de texto)
+   ========================================================================== */
+
+/* --- Variables Globales y Paleta --- */
+:root {
+  --color-fondo-pagina: #F5EFEB;
+  --color-fondo-secundario: #EADFD5;
+  --color-acento-principal: #A78A7F;
+  --color-acento-hover: #8F7267;
+  --color-acento-claro: #D6C4B8;
+  --color-texto-principal: #2B231F;
+  --color-texto-suave: #574B44;
+  --color-borde: #D1C0B2;
+
+  /* Colores tablero y notas tipo post-it */
+  --color-corcho-base: #C5A992;
+  --color-corcho-borde: #A88B74;
+  --color-postit-1: #FFFDF5;
+  --color-postit-2: #FAF5EB;
+  --color-postit-3: #F5EFE6;
+  --color-postit-4: #F8F2E8;
+
+  /* Contraste oscuro (Header y Footer inspirados en el wireframe) */
+  --color-oscuro-fondo: #26201D;
+  --color-oscuro-superficie: #362E29;
+  --color-oscuro-texto: #FAF6F0;
+  --color-oscuro-borde: #4D423B;
+
+  /* Tipografías */
+  --fuente-titulos: 'Inria Serif', Georgia, serif;
+  --fuente-cuerpo: 'Crimson Text', Garamond, 'Times New Roman', serif;
+
+  /* Sombras y transiciones */
+  --sombra-papel: 0 4px 14px rgba(43, 35, 31, 0.08), 0 1px 3px rgba(43, 35, 31, 0.05);
+  --sombra-hover: 0 8px 24px rgba(43, 35, 31, 0.14), 0 2px 6px rgba(43, 35, 31, 0.08);
+  --transicion-suave: all 0.25s ease-in-out;
+}
+
+/* --- Reseteo Básico y Caja --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  background-color: var(--color-fondo-pagina);
+  color: var(--color-texto-principal);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Jerarquía Tipográfica --- */
+h1, h2, h3, h4 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-texto-principal);
+}
+
+h1 {
+  font-size: 2.3rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.85rem;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  background-color: var(--color-acento-principal);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 0.9rem;
+}
+
+a {
+  color: var(--color-acento-hover);
+  text-decoration: none;
+  transition: var(--transicion-suave);
+}
+
+a:hover, a:focus-visible {
+  color: var(--color-texto-principal);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-texto-suave);
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================================== */
+.header {
+  background-color: var(--color-oscuro-fondo);
+  color: var(--color-oscuro-texto);
+  border-bottom: 2px solid var(--color-acento-principal);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-box a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+}
+
+.header-intro {
+  display: none; /* Visible en pantallas grandes */
+}
+
+@media (min-width: 992px) {
+  .header-intro {
+    display: block;
+    border-left: 1px solid var(--color-oscuro-borde);
+    padding-left: 1rem;
+  }
+  
+  .header-tagline {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--color-acento-claro);
+    margin: 0;
+    max-width: 250px;
+    line-height: 1.3;
+  }
+}
+
+.nav-principal {
+  flex-grow: 1;
+}
+
+.nav-lista {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.2rem;
+}
+
+.nav-lista a {
+  color: var(--color-oscuro-texto);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  transition: var(--transicion-suave);
+}
+
+.nav-lista a:hover,
+.nav-lista a:focus-visible {
+  color: #FFFFFF;
+  background-color: var(--color-oscuro-superficie);
+  text-decoration: none;
+}
+
+.btn-nav-tocar {
+  background-color: var(--color-acento-principal) !important;
+  color: #FFFFFF !important;
+  font-family: var(--fuente-titulos);
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  border: 1px solid var(--color-acento-claro);
+  border-radius: 6px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav-tocar:hover {
+  background-color: var(--color-acento-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   ESTRUCTURA GENERAL DEL MAIN Y SECCIONES
+   ========================================================================== */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.seccion {
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+}
+
+.seccion-encabezado {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+}
+
+.seccion-encabezado h2::after {
+  margin: 8px auto 0;
+}
+
+.seccion-encabezado p {
+  color: var(--color-texto-suave);
+  font-size: 1.05rem;
+  margin-top: 0.8rem;
+}
+
+/* Botones universales */
+.boton {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transicion-suave);
+}
+
+.boton-primario {
+  background-color: var(--color-acento-principal);
+  color: #FFFFFF;
+  box-shadow: 0 3px 8px rgba(167, 138, 127, 0.35);
+}
+
+.boton-primario:hover {
+  background-color: var(--color-acento-hover);
+  color: #FFFFFF;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(167, 138, 127, 0.45);
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: var(--color-texto-principal);
+  border-color: var(--color-texto-principal);
+}
+
+.boton-secundario:hover {
+  background-color: var(--color-texto-principal);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   SECCIÓN 1: PRESENTACIÓN (HERO)
+   ========================================================================== */
+.seccion-presentacion {
+  padding: 1rem 0 2rem;
+}
+
+.contenedor-presentacion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 850px) {
+  .contenedor-presentacion {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.etiqueta-destacada {
+  display: inline-block;
+  font-family: var(--fuente-titulos);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-acento-hover);
+  background-color: var(--color-fondo-secundario);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--color-borde);
+}
+
+.bajada-hero {
+  font-size: 1.15rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.5rem;
+}
+
+.acciones-hero {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.figura-hero {
+  position: relative;
+}
+
+.imagen-redondeada {
+  border-radius: 12px;
+  box-shadow: var(--sombra-papel);
+  border: 4px solid #FFFFFF;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   SECCIÓN 2: CARTELERA Y LUGARES ("TABLERO DE CORCHO")
+   ========================================================================== */
+.tablero-corcho {
+  background-color: var(--color-corcho-base);
+  background-image: 
+    radial-gradient(#b89b84 12%, transparent 12%),
+    radial-gradient(#ab8d76 12%, transparent 12%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+  border: 12px solid var(--color-corcho-borde);
+  border-radius: 14px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(43, 35, 31, 0.12);
+  padding: 2.5rem 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.nota-postit {
+  position: relative;
+  background-color: var(--color-postit-1);
+  padding: 1.4rem 1.2rem 1.2rem;
+  border-radius: 3px;
+  box-shadow: var(--sombra-papel);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nota-color-1 { background-color: var(--color-postit-1); transform: rotate(-0.7deg); }
+.nota-color-2 { background-color: var(--color-postit-2); transform: rotate(0.9deg); }
+.nota-color-3 { background-color: var(--color-postit-3); transform: rotate(-0.5deg); }
+.nota-color-4 { background-color: var(--color-postit-4); transform: rotate(0.8deg); }
+
+.nota-postit:hover {
+  transform: translateY(-4px) rotate(0deg) scale(1.02);
+  box-shadow: var(--sombra-hover);
+  z-index: 5;
+}
+
+/* Chincheta visual de la nota */
+.chincheta {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #D44439 40%, #7A1E17 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.nota-figura {
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--color-borde);
+}
+
+.nota-figura img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nota-postit:hover .nota-figura img {
+  transform: scale(1.04);
+}
+
+.nota-postit h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-texto-principal);
+}
+
+.lugar-direccion, .lugar-genero {
+  font-size: 0.88rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-texto-suave);
+}
+
+.lugar-descripcion {
+  font-size: 0.92rem;
+  margin: 0.5rem 0 0.8rem;
+  flex-grow: 1;
+}
+
+.nota-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--color-borde);
+  font-size: 0.85rem;
+}
+
+.aforo-badge {
+  font-size: 0.78rem;
+  background-color: var(--color-fondo-secundario);
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+.enlace-accion {
+  font-weight: 700;
+  font-family: var(--fuente-titulos);
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   SECCIÓN 3: INFORMACIÓN ("SOBRE PIANO BAR")
+   ========================================================================== */
+.contenido-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  background-color: #FFFFFF;
+  padding: 2.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-papel);
+}
+
+@media (min-width: 850px) {
+  .contenido-dos-columnas {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+.columna-texto p {
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.lista-pilares {
+  margin: 1rem 0 1rem 1.4rem;
+  padding-left: 0.5rem;
+}
+
+.lista-pilares li {
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+}
+
+.figura-informativa {
+  margin-bottom: 1.5rem;
+}
+
+.figura-informativa img {
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+.nota-adicional {
+  background-color: var(--color-fondo-secundario);
+  border-left: 4px solid var(--color-acento-principal);
+  padding: 1.2rem;
+  border-radius: 0 6px 6px 0;
+}
+
+.nota-adicional h4 {
+  font-size: 1rem;
+  color: var(--color-texto-principal);
+  margin-bottom: 0.4rem;
+}
+
+.nota-adicional p {
+  font-size: 0.92rem;
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+/* ==========================================================================
+   SECCIÓN 4: GALERÍA DE IMÁGENES
+   ========================================================================== */
+.grilla-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.item-galeria {
+  background-color: #FFFFFF;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-papel);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-galeria:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-hover);
+}
+
+.item-galeria img {
+  border-radius: 6px;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.item-galeria figcaption {
+  padding: 0.6rem 0.2rem 0.2rem;
+  font-size: 0.88rem;
+  color: var(--color-texto-suave);
+  text-align: left;
+}
+
+/* ==========================================================================
+   SECCIÓN 5: DATOS DESTACADOS Y CURIOSIDADES
+   ========================================================================== */
+.grilla-metricas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.tarjeta-metrica {
+  background-color: var(--color-oscuro-superficie);
+  color: var(--color-oscuro-texto);
+  padding: 1.8rem 1.4rem;
+  border-radius: 10px;
+  text-align: center;
+  border-bottom: 4px solid var(--color-acento-principal);
+  box-shadow: var(--sombra-papel);
+  transition: transform 0.25s ease;
+}
+
+.tarjeta-metrica:hover {
+  transform: translateY(-3px);
+}
+
+.cifra-metrica {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-acento-claro);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-metrica h3 {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-metrica p {
+  font-size: 0.88rem;
+  color: #D1C0B2;
+  margin: 0;
+}
+
+.bloque-curiosidades {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--sombra-papel);
+}
+
+.bloque-curiosidades h3 {
+  margin-bottom: 1.2rem;
+  color: var(--color-texto-principal);
+}
+
+.lista-curiosidades {
+  list-style-type: square;
+  margin-left: 1.5rem;
+}
+
+.lista-curiosidades li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: var(--color-texto-suave);
+}
+
+.lista-curiosidades strong {
+  color: var(--color-texto-principal);
+}
+
+/* ==========================================================================
+   SECCIÓN 6: ENLACES EXTERNOS
+   ========================================================================== */
+.grilla-enlaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-enlace {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--sombra-papel);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease;
+}
+
+.tarjeta-enlace:hover {
+  transform: translateY(-3px);
+}
+
+.tarjeta-enlace h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-enlace p {
+  font-size: 0.92rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.boton-enlace-externo {
+  display: inline-block;
+  font-family: var(--fuente-titulos);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-acento-hover);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-acento-principal);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.boton-enlace-externo:hover {
+  background-color: var(--color-acento-principal);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   SECCIÓN DE CONTACTO / FORMULARIO
+   ========================================================================== */
+.caja-contacto {
+  background-color: #FFFFFF;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-papel);
+}
+
+.contacto-intro {
+  margin-bottom: 1.5rem;
+  color: var(--color-texto-suave);
+  text-align: center;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo-formulario label {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-texto-principal);
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  background-color: var(--color-fondo-pagina);
+  color: var(--color-texto-principal);
+  transition: var(--transicion-suave);
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-acento-principal);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(167, 138, 127, 0.2);
+}
+
+/* ==========================================================================
+   FOOTER: DATOS DEL ESTUDIANTE, CURSO, AÑO Y FRASE
+   ========================================================================== */
+.footer {
+  background-color: var(--color-oscuro-fondo);
+  color: var(--color-oscuro-texto);
+  border-top: 3px solid var(--color-acento-principal);
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-oscuro-borde);
+}
+
+@media (min-width: 800px) {
+  .footer-container {
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+  }
+}
+
+.footer-titulo-marca {
+  font-size: 1.5rem;
+  color: var(--color-oscuro-texto);
+  margin-bottom: 0.2rem;
+}
+
+.footer-lema {
+  font-size: 0.9rem;
+  color: var(--color-acento-claro);
+  margin-bottom: 1rem;
+}
+
+.footer-frase {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #D1C0B2;
+  border-left: 3px solid var(--color-acento-principal);
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+.footer-columna h4 {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-oscuro-borde);
+  padding-bottom: 0.4rem;
+}
+
+.footer-lista-nav {
+  list-style: none;
+}
+
+.footer-lista-nav li {
+  margin-bottom: 0.45rem;
+}
+
+.footer-lista-nav a {
+  color: #D1C0B2;
+  font-size: 0.95rem;
+}
+
+.footer-lista-nav a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.dato-estudiante {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #D1C0B2;
+}
+
+.dato-estudiante strong {
+  color: #FFFFFF;
+}
+
+.resaltado-estudiante {
+  background-color: var(--color-oscuro-superficie);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-acento-principal);
+  color: #FFFFFF;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #A39387;
+}
+
+/* ==========================================================================
+   ADAPTACIONES RESPONSIVAS
+   ========================================================================== */
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-lista {
+    justify-content: flex-start;
+    gap: 0.4rem 0.8rem;
+  }
+
+  .tablero-corcho {
+    padding: 1.5rem 1rem;
+  }
+
+  .acciones-hero {
+    flex-direction: column;
+  }
+
+  .boton {
+    width: 100%;
+  }
+}

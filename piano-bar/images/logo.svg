@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60" fill="none">
+  <!-- Fondo con bordes redondeados y tono tierra suave -->
+  <rect x="2" y="2" width="256" height="56" rx="8" fill="#3B322C" stroke="#A78A7F" stroke-width="2"/>
+  
+  <!-- Icono de teclas de piano estilizadas -->
+  <g transform="translate(14, 13)">
+    <!-- Teclas blancas -->
+    <rect x="0" y="0" width="7" height="34" rx="2" fill="#F5EFEB" stroke="#3B322C" stroke-width="1"/>
+    <rect x="7" y="0" width="7" height="34" rx="2" fill="#F5EFEB" stroke="#3B322C" stroke-width="1"/>
+    <rect x="14" y="0" width="7" height="34" rx="2" fill="#F5EFEB" stroke="#3B322C" stroke-width="1"/>
+    <rect x="21" y="0" width="7" height="34" rx="2" fill="#F5EFEB" stroke="#3B322C" stroke-width="1"/>
+    <rect x="28" y="0" width="7" height="34" rx="2" fill="#F5EFEB" stroke="#3B322C" stroke-width="1"/>
+    <!-- Teclas negras -->
+    <rect x="4.5" y="0" width="5" height="20" rx="1" fill="#25211E"/>
+    <rect x="11.5" y="0" width="5" height="20" rx="1" fill="#25211E"/>
+    <rect x="25.5" y="0" width="5" height="20" rx="1" fill="#25211E"/>
+  </g>
+
+  <!-- Tipografía del logo -->
+  <text x="60" y="32" font-family="'Inria Serif', Georgia, serif" font-size="22" font-weight="700" fill="#F5EFEB" letter-spacing="1">PIANO BAR</text>
+  <text x="61" y="47" font-family="'Crimson Text', serif" font-size="11" font-style="italic" fill="#D9C3B0" letter-spacing="1.5">EL PUNTO DE ENCUENTRO</text>
+</svg>

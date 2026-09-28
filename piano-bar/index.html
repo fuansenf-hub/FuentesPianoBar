@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Piano Bar: Plataforma autogestiva que conecta a músicos independientes con espacios culturales y acerca recitales accesibles al público.">
+  <title>Piano Bar | El Punto de Encuentro de la Escena Cultural</title>
+  
+  <!-- Tipografías seleccionadas: Inria Serif para títulos y Crimson Text para cuerpos de texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Hoja de estilos del proyecto -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================================================================= -->
+  <!-- HEADER: Identidad, título de la temática y menú de navegación      -->
+  <!-- ================================================================= -->
+  <header class="header">
+    <div class="header-container">
+      
+      <!-- Logo y nombre del sitio -->
+      <div class="logo-box">
+        <a href="#inicio" title="Volver al inicio de Piano Bar">
+          <img src="images/logo.svg" alt="Logotipo de Piano Bar - El Punto de Encuentro" width="240" height="55" class="logo-img">
+        </a>
+      </div>
+
+      <!-- Título y bajada descriptiva de la temática elegida -->
+      <div class="header-intro">
+        <p class="header-tagline">El punto de encuentro entre músicos independientes y espacios culturales</p>
+      </div>
+
+      <!-- Menú de navegación principal con lista no ordenada -->
+      <nav class="nav-principal" aria-label="Menú de navegación principal">
+        <ul class="nav-lista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#lugares">Lugares</a></li>
+          <li><a href="#sobre-nosotros">Sobre Piano Bar</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#datos-destacados">Datos Destacados</a></li>
+          <li><a href="#enlaces">Enlaces</a></li>
+          <li><a href="#tocar" class="btn-nav-tocar">¿Querés Tocar?</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- MAIN: Contenido principal del sitio organizado por secciones      -->
+  <!-- ================================================================= -->
+  <main class="main-content">
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 1: PRESENTACIÓN (Hero / Bienvenida)                   -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="inicio" class="seccion seccion-presentacion">
+      <div class="contenedor-presentacion">
+        <div class="texto-presentacion">
+          <span class="etiqueta-destacada">Comunidad &bull; Autogestión &bull; Música en vivo</span>
+          <h1>Piano Bar: El Punto de Encuentro de la Escena Cultural</h1>
+          <p class="bajada-hero">
+            Conectamos a músicos independientes con cafés, bares y salas culturales para simplificar
+            la gestión de fechas en vivo, al tiempo que facilitamos al público el descubrimiento de
+            recitales íntimos y económicamente accesibles en cada rincón de la ciudad.
+          </p>
+          <div class="acciones-hero">
+            <a href="#lugares" class="boton boton-primario">Explorar Lugares</a>
+            <a href="#tocar" class="boton boton-secundario">Postular mi Proyecto</a>
+          </div>
+        </div>
+
+        <figure class="figura-hero">
+          <img src="images/hero.jpg" alt="Ambiente cálido de un piano bar con iluminación tenue y piano vertical preparado para tocar" width="550" height="380" class="imagen-redondeada">
+          <figcaption>Sesión acústica al caer la tarde: la música cercana que resignifica la vida urbana.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 2: CARTELERA Y LUGARES ("Tablero de Corcho")          -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="lugares" class="seccion seccion-lugares">
+      <header class="seccion-encabezado">
+        <h2>Cartelera Colaborativa de Espacios</h2>
+        <p>
+          Explorá los locales adheridos a la red. Cada tarjeta funciona como un aviso comunitario 
+          donde podés consultar la propuesta artística, el aforo y la disponibilidad para tocar o asistir.
+        </p>
+      </header>
+
+      <div class="tablero-corcho">
+        
+        <!-- Tarjeta Lugar 1 -->
+        <article class="nota-postit nota-color-1">
+          <div class="chincheta" aria-hidden="true"></div>
+          <figure class="nota-figura">
+            <img src="images/lugar-1.jpg" alt="Interior acogedor de Café Vinilo con mesas de madera e iluminación cálida" width="320" height="200" loading="lazy">
+          </figure>
+          <h3>Café Vinilo</h3>
+          <p class="lugar-direccion"><strong>Zona:</strong> Almagro, CABA</p>
+          <p class="lugar-genero"><strong>Géneros:</strong> Jazz, Tango acústico, Piano solista</p>
+          <p class="lugar-descripcion">
+            Espacio emblemático con piano de cola disponible, acústica cuidada y menú artesanal.
+          </p>
+          <div class="nota-pie">
+            <span class="aforo-badge">Aforo: 60 pers.</span>
+            <a href="#contacto" class="enlace-accion">Consultar fecha &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Tarjeta Lugar 2 -->
+        <article class="nota-postit nota-color-2">
+          <div class="chincheta" aria-hidden="true"></div>
+          <figure class="nota-figura">
+            <img src="images/lugar-2.jpg" alt="Escenario bohemio de La Casona del Jazz con instrumentos acústicos" width="320" height="200" loading="lazy">
+          </figure>
+          <h3>La Casona del Jazz</h3>
+          <p class="lugar-direccion"><strong>Zona:</strong> San Telmo, CABA</p>
+          <p class="lugar-genero"><strong>Géneros:</strong> Blues, Bossa Nova, Fusión</p>
+          <p class="lugar-descripcion">
+            Patio colonial adaptado con ciclos de trasnoche los fines de semana y micrófono abierto.
+          </p>
+          <div class="nota-pie">
+            <span class="aforo-badge">Aforo: 85 pers.</span>
+            <a href="#contacto" class="enlace-accion">Consultar fecha &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Tarjeta Lugar 3 -->
+        <article class="nota-postit nota-color-3">
+          <div class="chincheta" aria-hidden="true"></div>
+          <figure class="nota-figura">
+            <img src="images/lugar-3.jpg" alt="Ambiente íntimo de El Rincón del Teclado con luces tenues" width="320" height="200" loading="lazy">
+          </figure>
+          <h3>El Rincón del Teclado</h3>
+          <p class="lugar-direccion"><strong>Zona:</strong> Colegiales, CABA</p>
+          <p class="lugar-genero"><strong>Géneros:</strong> Canción de autor, Neo-Soul, Clásico</p>
+          <p class="lugar-descripcion">
+            Bar de cócteles clásicos que ofrece un piano vertical alemán afinado semanalmente para los artistas.
+          </p>
+          <div class="nota-pie">
+            <span class="aforo-badge">Aforo: 45 pers.</span>
+            <a href="#contacto" class="enlace-accion">Consultar fecha &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Tarjeta Lugar 4 -->
+        <article class="nota-postit nota-color-4">
+          <div class="chincheta" aria-hidden="true"></div>
+          <figure class="nota-figura">
+            <img src="images/lugar-4.jpg" alt="Espacio autogestivo Sótano Cultural con afiches y arte local" width="320" height="200" loading="lazy">
+          </figure>
+          <h3>Sótano Cultural</h3>
+          <p class="lugar-direccion"><strong>Zona:</strong> Vicente López, Gran Buenos Aires</p>
+          <p class="lugar-genero"><strong>Géneros:</strong> Indie Pop, Folk, Experimental</p>
+          <p class="lugar-descripcion">
+            Club autogestionado con escenario a la altura del público, entrada a la gorra y feria gráfica.
+          </p>
+          <div class="nota-pie">
+            <span class="aforo-badge">Aforo: 70 pers.</span>
+            <a href="#contacto" class="enlace-accion">Consultar fecha &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 3: INFORMACIÓN SOBRE EL TEMA ("Sobre Piano Bar")       -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="sobre-nosotros" class="seccion seccion-sobre-nosotros">
+      <header class="seccion-encabezado">
+        <h2>Sobre Piano Bar: Cultura, Encuentro y Autogestión</h2>
+        <p>El proyecto surge como respuesta concreta a la necesidad de revitalizar la música en vivo en los barrios.</p>
+      </header>
+
+      <div class="contenido-dos-columnas">
+        <div class="columna-texto">
+          <h3>Un puente entre la música independiente y los espacios</h3>
+          <p>
+            En la actualidad, tanto músicos como espacios culturales enfrentan dificultades cotidianas: 
+            las bandas y solistas emergentes dedican semanas a enviar mensajes para conseguir una fecha, 
+            muchas veces lidiando con condiciones desfavorables o exigencias desmedidas de venta de entradas. 
+            Por otro lado, los dueños de bares y centros barriales buscan ofrecer espectáculos de calidad, 
+            pero carecen de un canal directo para descubrir nuevos talentos.
+          </p>
+          <p>
+            <strong>Piano Bar</strong> propone una solución horizontal: un punto de encuentro ágil y centralizado
+            diseñado bajo el concepto de una <em>cartelera comunitaria de corcho</em>. Aquí, el contacto es directo,
+            transparente y sin intermediarios burocráticos.
+          </p>
+
+          <h3>Nuestros pilares fundamentales</h3>
+          <ol class="lista-pilares">
+            <li>
+              <strong>Autogestión transparente:</strong> Fomentamos acuerdos claros y justos entre músicos y anfitriones de las salas.
+            </li>
+            <li>
+              <strong>Accesibilidad para el público:</strong> Creemos que presenciar música de primer nivel no debe ser un lujo inaccesible.
+            </li>
+            <li>
+              <strong>Puesta en valor acústica:</strong> Privilegiamos lugares con acústica cuidada y respeto por el silencio del oyente.
+            </li>
+            <li>
+              <strong>Arquitectura dual:</strong> La plataforma contempla tanto al público que busca planes de fin de semana como a los artistas que desean reservar bloques horarios.
+            </li>
+          </ol>
+        </div>
+
+        <div class="columna-visual">
+          <figure class="figura-informativa">
+            <img src="images/sobre-nosotros.jpg" alt="Músicos tocando instrumentos en un bar con público participativo" width="500" height="350" loading="lazy">
+            <figcaption>
+              La atmósfera de intimidad: donde la distancia entre el artista y quien escucha desaparece.
+            </figcaption>
+          </figure>
+
+          <aside class="nota-adicional">
+            <h4>¿Por qué la estética analógica?</h4>
+            <p>
+              Adoptamos una identidad visual cálida inspirada en tableros de notas y afiches de imprenta 
+              porque la música en vivo es esencialmente orgánica, física y cercana. Buscamos devolverle a la 
+              pantalla digital la textura humana de las notas manuscritas.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 4: GALERÍA DE IMÁGENES                                -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="galeria" class="seccion seccion-galeria">
+      <header class="seccion-encabezado">
+        <h2>Galería de Encuentros y Conciertos</h2>
+        <p>Instantáneas de nuestras noches acústicas, la interacción del público y la atmósfera única de cada rincón.</p>
+      </header>
+
+      <div class="grilla-galeria">
+        
+        <figure class="item-galeria">
+          <img src="images/galeria-1.jpg" alt="Pianista interpretando una melodía en un piano vertical con luces tenues" width="400" height="300" loading="lazy">
+          <figcaption>El piano vertical en el centro de la escena: música viva sin barreras ni artificios.</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="images/galeria-2.jpg" alt="Público compartiendo un brindis y disfrutando del espectáculo en vivo" width="400" height="300" loading="lazy">
+          <figcaption>El calor del público: encuentros compartidos al abrigo de un café concert.</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="images/galeria-3.jpg" alt="Detalle de partituras vintage y anotaciones musicales de repertorio" width="400" height="300" loading="lazy">
+          <figcaption>Partituras, repertorio y anotaciones: el trabajo previo que cobra vida en cada función.</figcaption>
+        </figure>
+
+        <figure class="item-galeria">
+          <img src="images/galeria-4.jpg" alt="Detalle de las teclas de piano con iluminación dorada cálida" width="400" height="300" loading="lazy">
+          <figcaption>Ochenta y ocho teclas cargadas de historia, listas para el próximo solista invitado.</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 5: DATOS DESTACADOS Y CURIOSIDADES                     -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="datos-destacados" class="seccion seccion-datos">
+      <header class="seccion-encabezado">
+        <h2>Datos Destacados y Curiosidades</h2>
+        <p>Métricas que reflejan el crecimiento de la comunidad autogestionada y datos históricos sobre este formato.</p>
+      </header>
+
+      <!-- Grilla de estadísticas del proyecto -->
+      <div class="grilla-metricas">
+        <article class="tarjeta-metrica">
+          <span class="cifra-metrica">+200</span>
+          <h3>Espacios Adheridos</h3>
+          <p>Cafés literarios, bodegones culturales y bares con escenario en el circuito.</p>
+        </article>
+
+        <article class="tarjeta-metrica">
+          <span class="cifra-metrica">+500</span>
+          <h3>Músicos Activos</h3>
+          <p>Solistas, dúos y agrupaciones de diversos géneros musicales registradas.</p>
+        </article>
+
+        <article class="tarjeta-metrica">
+          <span class="cifra-metrica">+1.000</span>
+          <h3>Eventos Autogestionados</h3>
+          <p>Funciones coordinadas de forma directa y transparente entre artistas y locales.</p>
+        </article>
+
+        <article class="tarjeta-metrica">
+          <span class="cifra-metrica">AMBA</span>
+          <h3>Cobertura Metropolitana</h3>
+          <p>Presencia activa en comunas de Capital Federal y partidos de la provincia de Buenos Aires.</p>
+        </article>
+      </div>
+
+      <!-- Curiosidades sobre la tradición de los piano bares -->
+      <div class="bloque-curiosidades">
+        <h3>Curiosidades sobre la tradición de los "Piano Bares"</h3>
+        <ul class="lista-curiosidades">
+          <li>
+            <strong>El origen del concepto:</strong> Surgieron formalmente en la década de 1930 en ciudades como Nueva York y París, estableciéndose como refugios bohemios donde el pianista interactuaba cara a cara con la clientela.
+          </li>
+          <li>
+            <strong>El "piano a la vista":</strong> A diferencia de los teatros tradicionales con foso o escenario elevado, en el piano bar el instrumento se sitúa al mismo nivel de las mesas, generando una acústica envolvente y un trato conversacional.
+          </li>
+          <li>
+            <strong>Canciones a pedido:</strong> Históricamente, el frasco de propinas sobre el piano servía también como buzón de pedidos donde los asistentes dejaban notas escritas con sus melodías predilectas.
+          </li>
+          <li>
+            <strong>Semillero de grandes leyendas:</strong> Íconos como Nina Simone, Bill Evans y Charly García forjaron sus primeros pasos y composiciones tocando largas noches en espacios de este estilo.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN 6: ENLACES EXTERNOS Y REDES DE LA COMUNIDAD           -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="enlaces" class="seccion seccion-enlaces">
+      <header class="seccion-encabezado">
+        <h2>Enlaces de Interés y Redes Externas</h2>
+        <p>Recursos recomendados para profundizar sobre la autogestión musical y la historia de estos espacios.</p>
+      </header>
+
+      <div class="grilla-enlaces">
+        <article class="tarjeta-enlace">
+          <h3>Historia en Wikipedia</h3>
+          <p>Conocé el origen histórico, evolución y rol cultural de los piano bares en el mundo.</p>
+          <a href="https://es.wikipedia.org/wiki/Piano_bar" target="_blank" rel="noopener noreferrer" class="boton-enlace-externo">
+            Leer en Wikipedia &nearr;
+          </a>
+        </article>
+
+        <article class="tarjeta-enlace">
+          <h3>Sesiones en YouTube</h3>
+          <p>Disfrutá de grabaciones en vivo, sesiones de piano acústico y recitales íntimos seleccionados.</p>
+          <a href="https://www.youtube.com/results?search_query=piano+bar+live+session+jazz" target="_blank" rel="noopener noreferrer" class="boton-enlace-externo">
+            Ver en YouTube &nearr;
+          </a>
+        </article>
+
+        <article class="tarjeta-enlace">
+          <h3>INAMU (Sitio Oficial)</h3>
+          <p>Instituto Nacional de la Música: convocatorias, derechos de autor y herramientas para músicos.</p>
+          <a href="https://inamu.musica.ar/" target="_blank" rel="noopener noreferrer" class="boton-enlace-externo">
+            Visitar Sitio Oficial &nearr;
+          </a>
+        </article>
+
+        <article class="tarjeta-enlace">
+          <h3>Comunidad en Redes</h3>
+          <p>Seguí la agenda cultural semanal, convocatorias abiertas y novedades de la escena en Instagram.</p>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="boton-enlace-externo">
+            Seguir en Instagram &nearr;
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------- -->
+    <!-- SECCIÓN DE CONTACTO / POSTULACIÓN PARA MÚSICOS                -->
+    <!-- ------------------------------------------------------------- -->
+    <section id="tocar" class="seccion seccion-contacto">
+      <header class="seccion-encabezado">
+        <h2>¿Querés tocar o sumar tu espacio cultural?</h2>
+        <p>Escribinos para incorporar tu proyecto musical o registrar tu local a la red colaborativa de Piano Bar.</p>
+      </header>
+
+      <div class="caja-contacto">
+        <p class="contacto-intro">
+          Dejanos tus datos y nos pondremos en contacto para coordinar fechas y disponibilidad de horarios:
+        </p>
+        
+        <form class="formulario-contacto" action="#" method="get" onsubmit="event.preventDefault(); alert('¡Gracias por comunicarte con Piano Bar! Tu mensaje ha sido registrado.');">
+          <div class="campo-formulario">
+            <label for="campo-nombre">Nombre y Apellido o Nombre del Proyecto:</label>
+            <input type="text" id="campo-nombre" name="nombre" placeholder="Ej: Trío del Sur / Café de las Artes" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="campo-email">Correo Electrónico:</label>
+            <input type="email" id="campo-email" name="email" placeholder="ejemplo@correo.com" required>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="campo-rol">Tipo de postulación:</label>
+            <select id="campo-rol" name="rol" required>
+              <option value="" disabled selected>Seleccioná una opción...</option>
+              <option value="musico">Músico / Banda independiente</option>
+              <option value="espacio">Dueño o gestor de bar / espacio cultural</option>
+              <option value="publico">Consultas del público / sugerencias</option>
+            </select>
+          </div>
+
+          <div class="campo-formulario">
+            <label for="campo-mensaje">Mensaje o enlace a tu música / espacio:</label>
+            <textarea id="campo-mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente sobre tu propuesta artística o características de la sala..." required></textarea>
+          </div>
+
+          <button type="submit" class="boton boton-primario">Enviar Mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- FOOTER: Datos del estudiante, curso, año y frase institucional    -->
+  <!-- ================================================================= -->
+  <footer class="footer" id="contacto">
+    <div class="footer-container">
+      
+      <!-- Columna 1: Marca y frase institucional requerida -->
+      <div class="footer-columna footer-marca">
+        <h3 class="footer-titulo-marca">Piano Bar</h3>
+        <p class="footer-lema">El punto de encuentro para la música independiente.</p>
+        <blockquote class="footer-frase">
+          &ldquo;La música en vivo no necesita grandes estadios para ser inolvidable: basta con un piano, un espacio acogedor y alguien dispuesto a escuchar.&rdquo;
+        </blockquote>
+      </div>
+
+      <!-- Columna 2: Navegación rápida -->
+      <div class="footer-columna footer-enlaces">
+        <h4>Mapa del Sitio</h4>
+        <ul class="footer-lista-nav">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#lugares">Cartelera y Lugares</a></li>
+          <li><a href="#sobre-nosotros">Sobre Piano Bar</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#datos-destacados">Datos Destacados</a></li>
+          <li><a href="#enlaces">Enlaces Externos</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3: Datos del Estudiante (Requisitos de entrega) -->
+      <div class="footer-columna footer-estudiante">
+        <h4>Información Académica</h4>
+        <p class="dato-estudiante">
+          <!-- Modificar con tu nombre y apellido -->
+          <strong>Estudiante:</strong> <span class="resaltado-estudiante">Juan [Completar Apellido]</span>
+        </p>
+        <p class="dato-estudiante">
+          <!-- Modificar con el nombre de tu curso/materia -->
+          <strong>Curso:</strong> <span class="resaltado-estudiante">Diseño y Desarrollo Web</span>
+        </p>
+        <p class="dato-estudiante">
+          <strong>Año:</strong> <span class="resaltado-estudiante">2026</span>
+        </p>
+        <p class="dato-estudiante">
+          <strong>Entrega:</strong> Primera Entrega - Estructura HTML y Contenido Semántico
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Piano Bar. Todos los derechos reservados. Proyecto educativo autogestivo.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
